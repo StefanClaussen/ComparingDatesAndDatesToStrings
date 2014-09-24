@@ -1,18 +1,15 @@
 //
 //  ViewController.m
 //  ComparingDatesAndTime
-//
-//  Created by Stefan Claussen on 24/09/2014.
-//  Copyright (c) 2014 One foot after the other. All rights reserved.
-//
+
+//Simple tasks that might want to do with dates and time.
+//- Store the current date and a future date as a property
+//- Log a date
+//- CompareTwoDates
 
 #import "ViewController.h"
 
 @interface ViewController ()
-{
-//    NSDate *_pomodoroStartTime;
-//    NSDate *_pomodoroFinishTime;
-}
 
 @property (strong, nonatomic)NSDate *pomodoroStartTime;
 @property (strong, nonatomic)NSDate *pomodoroFinishTime;
@@ -69,10 +66,20 @@
 
     NSLog(@" days = %.0f,hours = %.2f, minutes = %.0f,seconds = %.0f", days, hours, minutes, seconds);
 
-    if (seconds >= 1)
+    if (seconds > 1)
+    {
     NSLog(@"Pomodoro finish time is greater than the start time");
+    }
+    else if (seconds < 1) //i.e seconds are negative
+    {
+        NSLog(@"Pomodoro start time is greater than the finish time");
+    }
+    else if (seconds == 0)
+    {
+        NSLog(@"Pomodoro staert time is equal to the finish time");
+    }
     else
-    NSLog(@"Pomodoro start time is greater than the finish time");
+        NSLog(@"Something is wrong");
 }
 
 @end
