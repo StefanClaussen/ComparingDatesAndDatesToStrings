@@ -76,7 +76,7 @@
     }
     else if (seconds == 0)
     {
-        NSLog(@"Pomodoro staert time is equal to the finish time");
+        NSLog(@"Pomodoro start time is equal to the finish time");
     }
     else
         NSLog(@"Something is wrong");
